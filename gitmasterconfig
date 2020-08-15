@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/iconmgr/obsidian
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "upstream"]
+	url = https://github.com/madmaxms/iconpack-obsidian
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+	pushurl = DISABLE
