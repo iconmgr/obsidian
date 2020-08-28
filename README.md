@@ -1,7 +1,25 @@
-# iconpack-obsidian
-Gnome Icon Pack based upon Faenza
+## obsidian icons  
+  
+Requires:  
 
-![alt tag](https://github.com/madmaxms/iconpack-obsidian/blob/master/logo.jpg)
+```shell
+sudo bash -c "$(curl -LSs https://github.com/dfmgr/installer/raw/master/install.sh)"
+```
 
-## Installation
-Clone or download the repo and move the containing folders to your `~/.icons` directory, or to `/usr/share/icons` (needs root access).
+Automatic:
+
+```shell
+bash -c "$(curl -LSs https://github.com/iconmgr/obsidian/raw/master/install.sh)"
+```
+
+Install:
+
+```shell
+sudo iconmgr install obsidian
+```
+
+Update:
+
+```shell
+sudo iconmgr update obsidian
+```
