@@ -48,7 +48,7 @@ APPNAME="${APPNAME:-obsidian}"
 APPDIR="${APPDIR:-$SHARE/CasjaysDev/iconmgr}/$APPNAME"
 REPO="${ICONMGRREPO:-https://github.com/iconmgr}/${APPNAME}"
 REPORAW="${REPORAW:-$REPO/raw}"
-APPVERSION="$(curl -LSs $REPORAW/master/version.txt)"
+APPVERSION="$(__appversion "$REPORAW/master/version.txt")"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -84,13 +84,12 @@ ensure_perms
 
 if [ -d "$APPDIR/.git" ]; then
   execute \
-  "git_update $APPDIR" \
-  "Updating $APPNAME configurations"
+    "git_update $APPDIR" \
+    "Updating $APPNAME configurations"
 else
   execute \
-  "backupapp && \
-        git_clone -q $REPO/$APPNAME $APPDIR" \
-  "Installing $APPNAME configurations"
+    "git_clone $REPO/$APPNAME $APPDIR" \
+    "Installing $APPNAME configurations"
 fi
 
 # exit on fail
@@ -105,8 +104,8 @@ run_postinst() {
 }
 
 execute \
-"run_postinst" \
-"Running post install scripts"
+  "run_postinst" \
+  "Running post install scripts"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
