@@ -2,3 +2,5 @@
 ignoredirmessage
 
 */icon-theme.cache
+# ignore commit message
+.gitcommit
